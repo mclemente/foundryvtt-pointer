@@ -1,15 +1,9 @@
 let controls;
-import { PointerSettingsMenu } from "./settings/settings-menu.js";
 
 export default function init() {
-	const settings = foundry.utils.mergeObject(
-		PointerSettingsMenu.defaultSettings.controls,
-		game.user.getFlag("pointer", "settings")?.controls,
-	);
-
 	removeListeners();
 
-	setUpControls(settings);
+	setUpControls();
 
 	addListeners();
 }
@@ -26,7 +20,8 @@ export function getKey(event) {
 	return event.key;
 }
 
-function setUpControls(settings) {
+function setUpControls() {
+	const settings = game.settings.get("pointer", "controls");
 	controls = { pointer: {}, ping: {}, force: {} };
 
 	for (let objKey of ["ping", "pointer"]) {

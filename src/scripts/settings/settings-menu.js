@@ -38,253 +38,6 @@ export class PointerSettingsMenu extends HandlebarsApplicationMixin(ApplicationV
 		return "Pings and Pointers - Settings";
 	}
 
-	static get defaultCollection() {
-		return [
-			{
-				name: "Pointer Hand",
-				id: "wztq19uwjl",
-				scale: 1,
-				angle: 0,
-				offset: {
-					x: 0.5,
-					y: 0.5,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 1,
-				animations: {
-					rotation: {
-						use: false,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: 0,
-						max: 180,
-					},
-					scale: {
-						use: false,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: 0.5,
-						max: 2,
-					},
-				},
-				img: "modules/pointer/assets/pointer.svg",
-			},
-			{
-				name: "Ping Round",
-				id: "gw4tu2ov86",
-				scale: 1,
-				angle: 0,
-				offset: {
-					x: 0,
-					y: 0,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 5,
-				animations: {
-					rotation: {
-						use: true,
-						dur: 5,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: -180,
-						max: 180,
-					},
-					scale: {
-						use: false,
-						dur: 2.5,
-						easing: {
-							method: "sine",
-							type: "inOut",
-						},
-						yoyo: true,
-						min: 1,
-						max: 1.5,
-					},
-				},
-				img: "modules/pointer/assets/focus.svg",
-				gridSize: 50,
-				default: "ping",
-			},
-			{
-				name: "Ping Arrows",
-				id: "6p55sd7xi3",
-				scale: 1,
-				angle: 0,
-				offset: {
-					x: 0,
-					y: 0,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 5,
-				animations: {
-					rotation: {
-						use: false,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: 0,
-						max: 180,
-					},
-					scale: {
-						use: true,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: true,
-						min: 0.9,
-						max: 1.3,
-					},
-				},
-				img: "modules/pointer/assets/convergence-target.svg",
-			},
-			{
-				name: "Ping Triangle",
-				id: "eogjz9yjn3",
-				scale: 1,
-				angle: 0,
-				offset: {
-					x: 0,
-					y: -0.1,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 5,
-				animations: {
-					rotation: {
-						use: true,
-						dur: 4,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: -180,
-						max: 180,
-					},
-					scale: {
-						use: true,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: true,
-						min: 0.9,
-						max: 1.3,
-					},
-				},
-				img: "modules/pointer/assets/triangle-target.svg",
-			},
-			{
-				name: "Pointer Pin",
-				id: "dvs2vb9y0y",
-				scale: 1,
-				angle: -15,
-				offset: {
-					x: 0.35,
-					y: -0.6,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 1,
-				animations: {
-					rotation: {
-						use: false,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: 0,
-						max: 180,
-					},
-					scale: {
-						use: true,
-						dur: 1.5,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: true,
-						min: 0.9,
-						max: 1,
-					},
-				},
-				img: "modules/pointer/assets/pin.svg",
-			},
-			{
-				name: "Pointer Arrow",
-				id: "6njoyebxpf",
-				scale: 1,
-				angle: 0,
-				offset: {
-					x: 0,
-					y: -0.5,
-				},
-				tint: {
-					useUser: true,
-					color: "#ffffff",
-				},
-				pingDuration: 1,
-				animations: {
-					rotation: {
-						use: false,
-						dur: 1,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: false,
-						min: 0,
-						max: 180,
-					},
-					scale: {
-						use: true,
-						dur: 1.5,
-						easing: {
-							method: "none",
-							type: "in",
-						},
-						yoyo: true,
-						min: 0.9,
-						max: 1,
-					},
-				},
-				img: "modules/pointer/assets/plain-arrow.svg",
-			},
-		];
-	}
-
 	static get defaultSettings() {
 		return {
 			controls: {
@@ -307,73 +60,48 @@ export class PointerSettingsMenu extends HandlebarsApplicationMixin(ApplicationV
 		this._initDesigner(html.querySelector(".designer"));
 
 		const chooser = html.querySelector(".chooser");
-		chooser.addEventListener("click", (ev) => {
-			let target = ev.target.closest(".pointer-name");
-			if (target) {
-				this._onClickName(ev);
-			}
-
-			target = ev.target.closest(".delete-pointer");
-			if (target) {
-				const li = target.closest("li");
+		html.querySelectorAll(".chooser .pointer-name:not(.header .pointer-name)").forEach((el) => {
+			el.addEventListener("click", (ev) => this._onClickName(ev));
+		});
+		html.querySelectorAll(".chooser .delete-pointer").forEach((el) => {
+			el.addEventListener("click", (ev) => {
+				const li = ev.target.closest("li");
 				let collection = foundry.utils.duplicate(game.settings.get("pointer", "collection"));
-				const pointerData = li.dataset.pointerId === this.pointer.id ? {} : foundry.utils.duplicate(this.pointer.data);
 				collection = collection.filter((e) => e.id !== li.dataset.pointerId);
-				if (collection.length === 0) collection = foundry.utils.duplicate(this.constructor.defaultCollection);
 				game.settings.set("pointer", "collection", collection).then(async (e) => {
 					await this.render();
-					this._selectPointer(pointerData);
+					this._selectPointer(li.dataset.pointerId === this.pointer.data.id ? {} : this.pointer.data);
 				});
-			}
-
-			target = ev.target.closest(".add-pointer");
-			if (target) {
-				this._addPointer();
-			}
+			});
+		});
+		html.querySelectorAll(".chooser .add-pointer").forEach((el) => {
+			el.addEventListener("click", (ev) => this._addPointer());
 		});
 
-		chooser.querySelectorAll("input").forEach((e) =>
-			e.addEventListener("change", async (ev) => {
-				ev.preventDefault();
-				ev.stopPropagation();
+		chooser.querySelectorAll("input").forEach((el) =>
+			el.addEventListener("change", async (ev) => {
 				const target = ev.currentTarget;
-				const list = target.closest(".chooser");
-				const checkboxes = Array.from(list.querySelectorAll(`input[name=${target.name}]`)).filter((e) => e !== target);
-				target.checked = true;
-				for (let checkbox of checkboxes) {
-					checkbox.checked = false;
-				}
-
-				await this.submit(ev);
+				target.closest(".chooser")
+					.querySelectorAll(`input[name="${CSS.escape(target.name)}"]`)
+					.forEach((checkbox) => {
+						checkbox.checked = checkbox === target;
+					});
 			}),
 		);
-
-		if (!game.user.isGM) {
-			return;
-		}
-		html.querySelector(".pointer-apply-settings").addEventListener("click", async (ev) => {
-			const settings = this.userData;
-			for (let user of game.users) {
-				await user.unsetFlag("pointer", "settings");
-				await user.setFlag("pointer", "settings", settings);
-			}
-			ui.notifications.info("Finished applying settings to all users!");
-		});
 	}
 
 	async _addPointer() {
-		const idx = Math.floor(Math.random() * PointerSettingsMenu.defaultCollection.length);
-		const pointerData = foundry.utils.duplicate(PointerSettingsMenu.defaultCollection[idx]);
-		pointerData.name = "New";
-		pointerData.id = foundry.utils.randomID();
+		const newData = foundry.utils.duplicate(game.settings.settings.get("pointer.collection").default[0]);
+		newData.name = "New";
+		newData.id = foundry.utils.randomID();
 
 		const collection = foundry.utils.duplicate(game.settings.get("pointer", "collection"));
-		collection.push(pointerData);
+		collection.push(newData);
 		await game.settings.set("pointer", "collection", collection);
 
 		await this.render(false);
 
-		this._selectPointer(pointerData);
+		this._selectPointer(newData);
 	}
 
 	async _onClickName(ev) {
@@ -481,75 +209,50 @@ export class PointerSettingsMenu extends HandlebarsApplicationMixin(ApplicationV
 		return game.user.can("SETTINGS_MODIFY");
 	}
 
-	get userData() {
-		return foundry.utils.mergeObject(
-			PointerSettingsMenu.defaultSettings,
-			game.user.getFlag("pointer", "settings") || {},
-		);
-	}
-
 	_prepareContext(options) {
-		let data = foundry.utils.mergeObject(options, this.userData);
-		data = foundry.utils.mergeObject(data, this.userData);
-
-		data.canConfigure = this.canConfigure;
-		// data.pixi = Pointer.defaultSettings;
-		data.easingMethod = {
-			none: "Linear",
-			sine: "Sine",
-			expo: "Exponential",
-			elastic: "Elastic",
-			bounce: "Bounce",
+		const controls = game.settings.get("pointer", "controls");
+		const data = {
+			canConfigure: this.canConfigure,
+			easingMethod: {
+				none: "Linear",
+				sine: "Sine",
+				expo: "Exponential",
+				elastic: "Elastic",
+				bounce: "Bounce",
+			},
+			easingType: {
+				in: "In",
+				out: "Out",
+				inOut: "In and Out",
+			},
+			collection: game.settings.get("pointer", "collection"),
+			isGM: game.user.isGM,
+			controls,
 		};
-		data.easingType = {
-			in: "In",
-			out: "Out",
-			inOut: "In and Out",
-		};
 
-		data.collection = game.settings.get("pointer", "collection");
-		if (data.canConfigure && !data.collection.length) {
-			data.collection = foundry.utils.duplicate(this.constructor.defaultCollection);
-			game.settings.set("pointer", "collection", data.collection);
-		}
-
-		const userSettings = this.userData;
-
-		let selectedPointer = data.collection.find((e) => e.id === userSettings.pointer);
-		if (!userSettings.pointer || !selectedPointer) {
-			selectedPointer = data.collection[0];
-			userSettings.pointer = selectedPointer.id;
-		}
+		const selectedPointer = data.collection.find((e) => e.id === controls.pointer.id);
 
 		data.collection.forEach((pointer) => {
-			pointer.selectedAsPointer = pointer.id === userSettings.pointer;
+			pointer.selectedAsPointer = pointer.id === controls.pointer.id;
 		});
 
 		data.pixi = foundry.utils.expandObject(selectedPointer);
 
-		let selectedPing = data.collection.find((e) => e.id === userSettings.ping);
-		if (!userSettings.ping || !selectedPing) {
-			selectedPing = data.collection[1] || data.collection[0];
-			userSettings.ping = selectedPing.id;
-		}
+		const selectedPing = data.collection.find((e) => e.id === controls.ping.id);
 
 		data.collection.forEach((ping) => {
-			ping.selectedAsPing = ping.id === userSettings.ping;
+			ping.selectedAsPing = ping.id === controls.ping.id;
 		});
 
 		selectedPing.selectedAsPing = true;
 
-		data.isGM = game.user.isGM;
-
-		if (!this.tabGroups.primary) {
-			this.tabGroups.primary = "general";
-		}
+		this.tabGroups.primary ??= "general";
 
 		data.tabs = {
 			general: {
 				id: "general",
 				group: "primary",
-				label: "General",
+				label: "POINTER.Settings.Controls.header",
 				cssClass: this.tabGroups.primary === "general" ? "active" : "",
 			},
 			chooser: {
@@ -560,28 +263,29 @@ export class PointerSettingsMenu extends HandlebarsApplicationMixin(ApplicationV
 			},
 		};
 
-		return data;
+		return {
+			...options,
+			...data
+		};
 	}
 
 	static async myOnSubmit(event, form, formData) {
-		const data = foundry.utils.expandObject(formData.object);
+		const { pointer, controls } = foundry.utils.expandObject(formData.object);
 		if (this.canConfigure) {
 			this.pointer.save();
-			data.pointer.img = this.pointer.data.img;
-			this.pointer.save(data.pointer);
+			pointer.img = this.pointer.data.img;
+			this.pointer.save(pointer);
 		}
 		if (event.currentTarget?.closest(".designer")) {
 			return;
 		}
-		let settings = foundry.utils.duplicate(this.userData);
-		settings = foundry.utils.mergeObject(settings, data.user);
 		const chooser = form.querySelector(".chooser");
-		const pingId = chooser.querySelector('input[name="selectedAsPing"]:checked').closest("li").dataset.pointerId;
-		settings.ping = pingId;
-		const pointerId = chooser.querySelector('input[name="selectedAsPointer"]:checked').closest("li").dataset.pointerId;
-		settings.pointer = pointerId;
+		const pingId = chooser.querySelector('li:has(input[name="selectedAsPing"]:checked)').dataset.pointerId;
+		controls.ping.id = pingId;
+		const pointerId = chooser.querySelector('li:has(input[name="selectedAsPointer"]:checked)').dataset.pointerId;
+		controls.pointer.id = pointerId;
 
-		await game.user.setFlag("pointer", "settings", settings);
+		await game.settings.set("pointer", "controls", controls);
 		await this.render();
 
 		// keep the updated pointer in sync with the settings
@@ -611,16 +315,16 @@ export class PointerSettingsMenu extends HandlebarsApplicationMixin(ApplicationV
 		this._pixiApp.view.addEventListener("click", (ev) => {
 			new foundry.applications.apps.FilePicker.implementation({
 				type: "imagevideo",
-				current: this.pointer.img || "",
+				current: this.pointer.data.img || "",
 				callback: (path) => {
 					this.pointer.update({ img: path });
 					this.pointer.save();
 				},
 				top: this.position.top + 40,
 				left: this.position.left + 10,
-			}).browse(this.pointer.img);
+			}).browse(this.pointer.data.img);
 		});
-		const pointerId = this.userData.pointer;
+		const pointerId = game.settings.get("pointer", "controls").pointer.id;
 		const collection = game.settings.get("pointer", "collection");
 
 		const pointerData = collection.find((e) => e.id === pointerId) || collection[0];

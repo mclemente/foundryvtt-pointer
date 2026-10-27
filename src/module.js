@@ -8,6 +8,13 @@ Hooks.once("init", async () => {
 });
 
 Hooks.once("setup", function () {
+	const legacySettings = game.user.getFlag("pointer", "settings");
+	if (legacySettings) {
+		legacySettings.controls.ping.id = legacySettings.ping;
+		legacySettings.controls.pointer.id = legacySettings.pointer;
+		game.settings.set("pointer", "controls", legacySettings.controls);
+		game.user.unsetFlag("pointer", "settings");
+	}
 	initControls();
 });
 

@@ -1,13 +1,12 @@
 <div class="standard-form scrollable">
   <section class="tab {{tabs.general.cssClass}}" data-group="primary" data-tab="general">
-    <h2>{{localize "POINTER.Settings.Controls.header"}}</h2>
     <div class="form-group">
       <label for="pointer-pointer-button"
         >{{localize "POINTER.Settings.Controls.pointer.label"}}</label
       ><input
         type="text"
         id="pointer-pointer-button"
-        name="user.controls.pointer.key"
+        name="controls.pointer.key"
         class="pointer-control-chooser"
         value="{{controls.pointer.key}}"
       />
@@ -21,7 +20,7 @@
       ><input
         type="text"
         id="pointer-ping-button"
-        name="user.controls.ping.key"
+        name="controls.ping.key"
         class="pointer-control-chooser"
         value="{{controls.ping.key}}"
         readonly
@@ -36,7 +35,7 @@
       ><input
         type="text"
         id="pointer-ping-force-button"
-        name="user.controls.ping.force"
+        name="controls.ping.force"
         class="pointer-control-chooser"
         value="{{controls.ping.force}}"
         readonly
@@ -51,7 +50,7 @@
       <input
         type="checkbox"
         data-dtype="boolean"
-        name="user.controls.ping.pointerActive"
+        name="controls.ping.pointerActive"
         id="pointer-pointer-active"
         {{checked controls.ping.pointerActive}}
       />
@@ -59,20 +58,8 @@
 				{{localize "POINTER.Settings.Controls.ping.pointerActiveHint"}}
 			</p>
     </div>
-
-    {{#if isGM}}
-    <h2>GM Settings</h2>
-    <div class="form-group">
-      <label>{{localize 'POINTER.Settings.GM.applyToAll.label'}}</label>
-      <button type="button" class="pointer-apply-settings">
-        {{localize 'POINTER.Settings.GM.applyToAll.button'}}
-      </button>
-      <p class="hint">
-				{{localize 'POINTER.Settings.GM.applyToAll.hint'}}
-			</p>
-    </div>
-    {{/if}}
   </section>
+
   <section class="tab chooser-tab {{tabs.chooser.cssClass}}" data-group="primary" data-tab="chooser">
     <ul class="chooser">
       <li class="pointer-selection header">
