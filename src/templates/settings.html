@@ -1,31 +1,4 @@
-<div class="content-tabs">
-  <section class="tab {{tabs.info.cssClass}}" data-group="primary" data-tab="info">
-    <h2>Pointer v2 - Important!</h2>
-    <p>
-      The Pointer module finally got a shiny new configurable settings menu! You
-      can now create your own ping and pointer designs, set your own custom
-      hotkeys (on a per user basis) and even have different designs on a per
-      player basis! So make sure your players go and set their preferred
-      settings as well!<br />
-      To celebrate v2 the Pointer module got renamed to:
-      <em>PnP - Pings and Pointer</em>!
-    </p>
-    <h2>General</h2>
-    <ul>
-      <li>
-        <a href="https://github.com/p4535992/foundryvtt-pointer/issues"
-          >Bugs? Create an issue here.</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/p4535992/foundryvtt-pointer/blob/master/CHANGELOG.md"
-          >Changelog</a
-        >
-      </li>
-      <li><a href="https://github.com/p4535992/foundryvtt-pointer">More Info</a></li>
-    </ul>
-  </section>
+<div class="standard-form scrollable">
   <section class="tab {{tabs.general.cssClass}}" data-group="primary" data-tab="general">
     <h2>{{localize "POINTER.Settings.Controls.header"}}</h2>
     <div class="form-group">
@@ -38,10 +11,9 @@
         class="pointer-control-chooser"
         value="{{controls.pointer.key}}"
       />
-      <span class="pointer-hint"
-        >{{localize "POINTER.Settings.Controls.inputhint"}}<br />{{localize
-        "POINTER.Settings.Controls.pointer.hint"}}</span
-      >
+      <p class="hint">
+				{{localize "POINTER.Settings.Controls.inputhint"}}<br />{{localize "POINTER.Settings.Controls.pointer.hint"}}
+			</p>
     </div>
     <div class="form-group">
       <label for="pointer-ping-button"
@@ -54,10 +26,9 @@
         value="{{controls.ping.key}}"
         readonly
       />
-      <span class="pointer-hint"
-        >{{localize "POINTER.Settings.Controls.inputhint"}}<br />{{localize
-        "POINTER.Settings.Controls.ping.hint"}}</span
-      >
+      <p class="hint">
+				{{localize "POINTER.Settings.Controls.inputhint"}}<br />{{localize "POINTER.Settings.Controls.ping.hint"}}
+			</p>
     </div>
     {{#if isGM}}
     <div class="form-group">
@@ -70,25 +41,23 @@
         value="{{controls.ping.force}}"
         readonly
       />
-      <span class="pointer-hint"
-        >{{localize "POINTER.Settings.Controls.ping.forceHint"}}</span
-      >
+      <p class="hint">
+				{{localize "POINTER.Settings.Controls.ping.forceHint"}}
+			</p>
     </div>
     {{/if}}
-    <div class="form-checkbox-group">
+    <div class="form-group">
+			<label>{{localize 'POINTER.Settings.Controls.ping.pointerActive'}}</label>
       <input
         type="checkbox"
         data-dtype="boolean"
         name="user.controls.ping.pointerActive"
         id="pointer-pointer-active"
-        {{checked
-        controls.ping.pointerActive}}
-      /><label for="pointer-pointer-active"
-        >{{localize 'POINTER.Settings.Controls.ping.pointerActive'}}</label
-      >
-      <span class="pointer-hint"
-        >{{localize "POINTER.Settings.Controls.ping.pointerActiveHint"}}</span
-      >
+        {{checked controls.ping.pointerActive}}
+      />
+      <p class="hint">
+				{{localize "POINTER.Settings.Controls.ping.pointerActiveHint"}}
+			</p>
     </div>
 
     {{#if isGM}}
@@ -98,9 +67,9 @@
       <button type="button" class="pointer-apply-settings">
         {{localize 'POINTER.Settings.GM.applyToAll.button'}}
       </button>
-      <span class="pointer-hint"
-        >{{localize 'POINTER.Settings.GM.applyToAll.hint'}}</span
-      >
+      <p class="hint">
+				{{localize 'POINTER.Settings.GM.applyToAll.hint'}}
+			</p>
     </div>
     {{/if}}
   </section>
@@ -140,14 +109,13 @@
           <a class="pointer-selected-as-ping"> </a>
         </label>
         {{#if @root.canConfigure}}
-        <a class="delete-pointer" title='{{localize "POINTER.General.delete"}}'>
-        </a>
+        <a class="delete-pointer" title='{{localize "POINTER.General.delete"}}'><i class="fas fa-trash"></i></a>
         {{/if}}
       </li>
       {{/each}} {{#if canConfigure}}
       <li class="pointer-selection">
         <a class="add-pointer">
-          {{localize 'POINTER.Settings.Chooser.addPointer'}}
+					<i class="fas fa-plus"></i> {{localize 'POINTER.Settings.Chooser.addPointer'}}
         </a>
       </li>
       {{/if}}

@@ -5,28 +5,6 @@
     --highlight-color: red;
     --hint-color: #aaa;
 }
-.pointer-settings .window-content {
-    padding: 0;
-}
-.pointer-settings span,
-.pointer-settings h2,
-.pointer-settings p,
-.pointer-settings a,
-.pointer-settings label {
-    mix-blend-mode: difference;
-    color: #ddd;
-}
-.pointer-settings .content-tabs {
-    overflow-y: auto;
-}
-.pointer-settings .pointer-hint {
-    flex: 0 100%;
-    padding: 0 1em 0.3em 0;
-    margin-left: 4ch;
-    font-size: 0.9em;
-    color: var(--hint-color);
-    mix-blend-mode: difference;
-}
 .pointer-settings nav {
     background: var(--div-bg-color);
     padding: 6px;
@@ -55,22 +33,6 @@
     margin: 0;
     padding: 0 0.3rem;
 }
-.pointer-settings .pointer-info:before {
-    font-size: 0.6rem;
-    content: "\f059";
-    border: none;
-}
-.pointer-settings input[type="checkbox"] {
-    opacity: 0;
-    width: 0;
-    padding: 0;
-    margin: 0;
-    flex: 0;
-    display: inline;
-}
-.pointer-settings label[for] {
-    cursor: pointer;
-}
 .pointer-settings .form-group .form-group,
 .pointer-settings .form-group .form-checkbox-group {
     flex: 1 100%;
@@ -84,16 +46,6 @@
 }
 .pointer-settings .form-checkbox-group input[type="checkbox"] + label:hover {
     text-shadow: 0 0 4px var(--highlight-color);
-}
-.pointer-settings .form-checkbox-group input[type="checkbox"] + label:before {
-    font-weight: 400;
-    font-family: "Font Awesome 6 Pro";
-    padding: 0 0.3em;
-    content: "\f0c8";
-}
-.pointer-settings .form-checkbox-group input:checked + label:before {
-    font-weight: 900;
-    content: "\f14a";
 }
 .pointer-settings .form-checkbox-group .form-group {
     flex: 1 100%;
@@ -113,16 +65,6 @@
 }
 .pointer-settings .chooser-checkbox input[type="checkbox"] + a:hover {
     text-shadow: 0 0 4px var(--highlight-color);
-}
-.pointer-settings .chooser-checkbox input[type="checkbox"] + a:before {
-    font-weight: 400;
-    font-family: "Font Awesome 6 Pro";
-    padding: 0 0.3em;
-    content: "\f0c8";
-}
-.pointer-settings .chooser-checkbox input:checked + a:before {
-    font-weight: 900;
-    content: "\f14a";
 }
 .pointer-settings .pointer-chooser {
     display: flex;
@@ -180,22 +122,8 @@
     text-align: right;
     padding-right: 1ch;
 }
-.pointer-settings .chooser-tab.active .chooser .add-pointer:before {
-    content: "\f067";
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 900;
-}
 .pointer-settings .chooser-tab.active .chooser .delete-pointer {
     flex: 0 1ch;
-}
-.pointer-settings .chooser-tab.active .chooser .delete-pointer:before {
-    font-size: 0.8em;
-    content: "\f1f8";
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 900;
-}
-.pointer-settings .chooser-tab.active .chooser .header .delete-pointer:before {
-    content: "";
 }
 .pointer-settings .form-fields {
     position: relative;

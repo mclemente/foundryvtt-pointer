@@ -1,52 +1,15 @@
 {
     "id": "pointer",
-    "title": "PnP - Pointer and Pings!",
-    "description": "Gives all players the option to show a customizable cursor on demand, as well as ping any location with a custom ping!<br>Hotkeys, pings, pointer, everything customizable!<br>As GM you can also move your players view to your pin on demand.",
+    "title": "Pointer & Pings",
+    "description": "Gives all players the option to show a customizable cursor on demand, as well as ping any location with a custom ping!",
     "version": "14.0.0",
     "authors": [
         {
-            "name": "Moerill",
-            "url": "https://github.com/moerill"
-        },
-        {
-            "name": "farling42",
-            "url": "https://github.com/farling42/"
-        },
-        {
-            "name": "p4535992",
-            "url": "https://github.com/p4535992",
-            "discord": "",
-            "twitter": "",
-            "patreon": "",
-            "github": "p4535992",
-            "ko-fi": "",
-            "reddit": "",
-            "email": ""
-        },
-        {
-            "name": "samulopez",
-            "url": "https://github.com/samulopez"
-        },
-        {
-            "name": "Shr1mps",
-            "url": "https://github.com/Shr1mps"
+            "name": "Matheus Clemente",
+            "url": "https://github.com/mclemente"
         }
     ],
     "socket": true,
-    "media": [
-        {
-            "type": "icon",
-            "location": ""
-        },
-        {
-            "type": "cover",
-            "location": ""
-        },
-        {
-            "type": "screenshot",
-            "location": ""
-        }
-    ],
     "languages": [
         {
             "lang": "en",
@@ -70,45 +33,20 @@
         }
     ],
     "scripts": [
-        "greensock/dist/gsap.min.js",
-        "greensock/dist/PixiPlugin.min.js",
-        "greensock/dist/ScrollToPlugin.min.js",
-        "greensock/dist/SplitText.min.js"
+        "greensock/dist/gsap.min.js"
     ],
     "esmodules": [
-        "module.js"
+        "module/pointer.js"
     ],
     "styles": [
         "styles/pointer.css"
     ],
-    "packs": [],
-    "url": "https://github.com/p4535992/foundryvtt-pointer",
-    "manifest": "https://github.com/p4535992/foundryvtt-pointer/releases/download/14.0.0/module.json",
-    "download": "https://github.com/p4535992/foundryvtt-pointer/releases/download/14.0.0/module.zip",
-    "readme": "https://github.com/p4535992/foundryvtt-pointer/blob/master/README.md",
-    "changelog": "https://github.com/p4535992/foundryvtt-pointer/blob/master/CHANGELOG.md",
-    "bugs": "https://github.com/p4535992/foundryvtt-pointer/issues",
     "compatibility": {
         "minimum": 14,
         "verified": 14,
         "maximum": 14
     },
-    "relationships": {
-        "systems": [],
-        "requires": [
-            {
-                "id": "lib-wrapper",
-                "type": "module",
-                "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
-                "compatibility": {}
-            },
-            {
-                "id": "socketlib",
-                "type": "module",
-                "manifest": "https://raw.githubusercontent.com/manuelVo/foundryvtt-socketlib/develop/module.json",
-                "compatibility": {}
-            }
-        ],
-        "conflicts": []
-    }
+	"url": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced"
 }
